@@ -1,4 +1,3 @@
-<main-nav></main-nav>
 
 <main class="bg-info">
 
