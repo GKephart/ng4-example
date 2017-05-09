@@ -6,7 +6,7 @@
 			<div class="input-group-addon">
 				<i class="fa fa-hashtag" aria-hidden="true"></i>
 			</div>
-			<input type="number" id="baconNumParagraphs" name="baconNumParagraphs" class="form-control" required min="0" max="9" step="1" [(ngModel)]="numParagraphs" #baconNumParagraphs="ngModel" />
+			<input type="number" id="baconNumParagraphs" name="baconNumParagraphs" class="form-control" required min="0" max="9" step="1" [(ngModel)]="numParagraphs" #baconNumParagraphs="ngModel" (change)="getBacon();" />
 		</div>
 		<div [hidden]="baconNumParagraphs.valid || baconNumParagraphs.pristine" class="alert alert-danger" role="alert">
 			<p *ngIf="baconNumParagraphs.errors?.max">Number of paragraphs cannot be more than 10.</p>
