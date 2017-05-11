@@ -19,7 +19,8 @@
 		}
 		],
 	"scripts": {
-		"build": "rimraf public_html/dist && tsc && webpack --config webpack/webpack.live.js --progress --profile --bail"
+		"build": "rimraf public_html/dist && webpack --config webpack/webpack.live.js --progress --profile --bail",
+		"start": "webpack-dev-server --config webpack/webpack.dev.js --inline --progress --port 8080"
 	},
 	"repository": {
 		"type": "git",
@@ -67,6 +68,7 @@
 		"typescript": "^2.3.2",
 		"url-loader": "^0.5.8",
 		"webpack": "^2.5.1",
+		"webpack-dev-server": "2.4.5",
 		"webpack-merge": "^4.1.0"
 	}
 }
