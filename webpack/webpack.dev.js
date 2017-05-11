@@ -7,8 +7,8 @@ module.exports = webpackMerge(commonConfig, {
 	devtool: "cheap-module-eval-source-map",
 
 	output: {
-		path: helpers.root("public_html/dist"),
-		publicPath: "http://localhost:8080/",
+		path: helpers.root("public_html"),
+		publicPath: "http://localhost:8080",
 		filename: "[name].js",
 		chunkFilename: "[id].chunk.js"
 	},
@@ -18,11 +18,12 @@ module.exports = webpackMerge(commonConfig, {
 	],
 
 	devServer: {
+		contentBase: helpers.root("public_html"),
 		historyApiFallback: true,
 		stats: "minimal",
 		proxy: {
-			"**": {
-				target: "https://bootcamp-coders.cnm.edu/~dmcdonald21/ng4-example/public_html/",
+			"/api": {
+				target: "https://bootcamp-coders.cnm.edu/~dmcdonald21/ng4-example/public_html",
 				secure: false
 			}
 		}
